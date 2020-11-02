@@ -27,7 +27,7 @@ class App extends Component {
     }
 
     render() {
-        return (
+		return (
             <div>
                 <div className="left-scene">
                 <SearchBar searchFunction={this.search}/>
@@ -40,7 +40,7 @@ class App extends Component {
                 </div>
             </div>
         )
-    };
+    }
 }
 
 export default App;
