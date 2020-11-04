@@ -11,18 +11,25 @@ class App extends Component {
 
         this.state = {
             gifs: [],
-            selectedGifId: '7gHvotF7oLVie8AStr'
+            selectedGifId: null
         }
     }
 
     search = (query) => {
         giphy("TAjjbsgF0gf1oPUA4mFqQ1QxbQoXzCjA").search({
             q: query,
-            rating: 'g',
+			rating: 'g',
+			limit: 10,
         }, (error, result) => {
             this.setState({
-                gifs: result.data
+                gifs: result.data,
             }); 
+        });
+    }
+
+    selectGif = (id) => {
+        this.setState({
+            selectedGifId: id
         });
     }
 
